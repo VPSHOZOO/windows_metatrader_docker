@@ -1,0 +1,88 @@
+# Experts for MetaTrader
+experts/*
+!experts/.gitkeep
+!metatrader/.gitkeep
+!scripts/.gitkeep
+
+# All YML files except of docker-compose.yml
+*.yml
+!docker-compose.yml
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE and Editor Files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+*.sublime-workspace
+*.sublime-project
+
+# Compiled Files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+*.egg
+*.egg-info/
+
+
+# Environment and Configuration
+.python-version
+
+# Logs and Databases
+*.log
+logs/
+log/
+
+# Cache and Temporary Files
+.cache/
+.temp/
+.tmp/
+tmp/
+temp/
+.sass-cache/
+*.swp
+*.bak
+*.cache
+*.temp
+
+# Build and Distribution
+dist/
+build/
+out/
+
+# Version Control
+.git/
+.gitattributes
+.svn/
+CVS/
+.hg/
+.bzr/
+
+# Backup Files
+*.bak
+*.backup
+*~
+*.old

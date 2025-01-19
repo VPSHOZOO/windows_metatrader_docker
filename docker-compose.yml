@@ -1,0 +1,34 @@
+services:
+  windows:
+    image: dockurr/windows
+    container_name: windows10LTSC
+    environment:
+      VERSION: "10l"
+      AUTO_LOGIN: "true"
+      # LANGUAGE: "English"
+      # REGION: "en-US"
+      # KEYBOARD: "en-US"
+      USERNAME: "USER"
+      PASSWORD: "USER"
+      # DISK_SIZE: "64G"
+      # RAM_SIZE: "12G"
+      # CPU_CORES: "6"
+      METATRADER_USER: "META_TRADER_5_ACCOUNT_NUMBER"
+      METATRADER_PASSWORD: "META_TRADER_5_PASSWORD"
+      METATRADER_SERVER_NAME: "BROKER_SERVER"
+      MT_API_PORT: 8228
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006  # Web viewer
+      - 3390:3389  # RDP port
+      - 8228:8228  # MT API Port
+    volumes:
+      - ./scripts:/oem
+      - ./metatrader:/data/metatrader
+      - ./experts:/data/experts
+    # restart: unless-stopped
+    # stop_grace_period: 2m
