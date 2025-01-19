@@ -35,6 +35,7 @@ Desktop.ini
 *.class
 *.dll
 *.exe
+!metatrader/mt5setup.exe
 *.o
 *.so
 *.pyc
