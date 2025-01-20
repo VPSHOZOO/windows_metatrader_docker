@@ -18,103 +18,74 @@ Welcome to an innovative solution for running MetaTrader 5 on Linux servers! Thi
 - Internet connectivity
 - KVM virtualization support (essential for VPS users)
 
-## 🚀 Installation Process
+## Why this branch is for you?
+This branch provides a solution when your remote server's IP is blocked by Microsoft or other ISO download sources (Error 403) due to repeated download attempts. 🛡️
 
-1. Clone the repository:
+## Prerequisites
+- Git
+- Python3-pip
+- Docker
+- At least 5GB free space for ISO file
+
+## Installation Guide
+
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/ImanNasrEsfahani/windows_metatrader_docker
+git clone -b local-iso --single-branch https://github.com/ImanNasrEsfahani/windows_metatrader_docker
 ```
 
-2. Install Docker:
+### 2. Install gdown Package
 ```bash
-chmod +x docker-installation.bash
-./docker-installation.bash
+sudo apt install python3-pip
+pip install gdown
 ```
 
-3. Setup KVM virtualization:
+### 3. Download Windows ISO 💿
+Choose one of these commands based on your Windows version preference:
+
+**Windows 7**
 ```bash
-chmod +x setup_kvm_docker.bash
-./setup_kvm_docker.bash
+gdown https://drive.google.com/uc?id=1-JH0XXm0ppZjrNriSO1bqRUnokPo_N1S -O windows.iso
 ```
 
-4. Configure Docker Compose (Optional):
+**Windows 10 LTSC**
+```bash
+gdown https://drive.google.com/uc?id=1-9W7zVRDObTeUPGkG1VkIxuhVK2pI4Qx -O windows.iso
+```
+
+**Windows 10 PRO**
+```bash
+gdown https://drive.google.com/uc?id=1-3LbPI53bN8EJzRIw_ksfkid-L75cRYh -O windows.iso
+```
+
+### 4. Configure Docker Compose (Optional)
 ```bash
 make config
 ```
 
-5. Launch the container:
+### 5. Launch Container 🚀
+**Default configuration**
 ```bash
 docker compose up -d
 ```
 
-## 🔌 Accessing Your Container
-
-**Web Browser Access:**
-- URL: `your-server-ip:8006`
-
-**Remote Desktop Connection:**
-- Address: `your-server-ip:3390`
-
-**VNC Viewer:**
-- Address: `your-server-ip:3390`
-
-**API Access:**
-- Port: `2889`
-
-## 📦 Custom Configurations
-
-**Adding Custom Expert Advisors:**
-- Place your EAs in the `experts` folder before container launch
-
-**Changing MetaTrader Installation:**
-- Replace `mt5setup.exe` in the `metatrader` folder with your broker's MT5 version
-
-## 🧹 Maintenance
-
-To clean up unused Docker resources:
+**Custom configuration**
 ```bash
-./docker-pruner.bash
+docker compose -f custom-docker-compose.yml up -d
 ```
 
-## 🎯 Future Goals
+## Connecting to the Container 🖥️
 
-We're working towards developing a reliable system for:
-- High-frequency trading capabilities
-- Multi-account algorithmic trading
-- Cross-broker trading operations
-- Stable API integration
+| Connection Method | Address Format | Default Port |
+|------------------|----------------|--------------|
+| Web Browser | your-server-ip:8006 | 8006 |
+| Remote Desktop | your-server-ip:3390 | 3390 |
+| VNC Viewer | your-server-ip:3390 | 3390 |
 
+## Important Notes ⚠️
+- Ensure sufficient disk space (minimum 5GB) before downloading ISO
+- If using custom ports in docker-compose, replace default ports (8006/3390) accordingly
+- Custom configuration files must be properly configured before launching
 
-## 🤝 Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch:
-```bash
-git checkout -b feature/AmazingFeature
-```
-3. Commit your Changes:
-```bash
-git commit -m 'Add some AmazingFeature'
-```
-4. Push to the Branch:
-```bash
-git push origin feature/AmazingFeature
-```
-5. Open a Pull Request
-Let's make automated trading on Linux servers easier together! 🚀
-
-## ⭐ Show Your Support
-
-If you find this project helpful, please consider:
-- Giving it a star on GitHub! 🌟
-- Contributing to its development 🛠️
-- Sharing it with others who might benefit 🔄
-
-Let's make automated trading on Linux servers easier together! 🚀
-
----
-Made with ❤️ for the trading community 📈
+## Support
+If you find this project helpful, please consider giving it a star ⭐
