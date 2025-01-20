@@ -69,12 +69,13 @@ docker compose up -d
 **Changing MetaTrader Installation:**
 - Replace `mt5setup.exe` in the `metatrader` folder with your broker's MT5 version
 
-## 🧹 Maintenance
+## 🧹 Maintenance and Important Notes
 
 To clean up unused Docker resources:
 ```bash
 ./docker-pruner.bash
 ```
+Note: If you run this script many times, may mirror of downloader of microsoft limit your remote server IP, so in this condition use of the local-iso in this repository that download ISO file from Google Drive without limit of download.
 
 ## 🎯 Future Goals
 
