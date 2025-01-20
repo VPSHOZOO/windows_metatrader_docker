@@ -27,6 +27,7 @@ services:
       - 3390:3389  # RDP port
       - 8228:8228  # MT API Port
     volumes:
+      - ./windows.iso:/custom.iso
       - ./scripts:/oem
       - ./metatrader:/data/metatrader
       - ./experts:/data/experts

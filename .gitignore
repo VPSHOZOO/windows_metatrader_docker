@@ -8,6 +8,9 @@ experts/*
 *.yml
 !docker-compose.yml
 
+# windows ISO file that is so large
+windows.iso
+
 # Operating System Files
 .DS_Store
 .DS_Store?
