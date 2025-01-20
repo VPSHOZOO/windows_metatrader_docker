@@ -2,6 +2,7 @@
 
 Welcome to an innovative solution for running MetaTrader 5 on Linux servers! This project provides a seamless way to run Windows-based MetaTrader within a Docker container on Ubuntu Linux servers, offering multiple access methods and 24/7 operation capability. 🌟
 
+
 ## 🎯 Key Features
 
 - Run multiple MetaTrader instances on Linux servers 🖥️
@@ -10,6 +11,7 @@ Welcome to an innovative solution for running MetaTrader 5 on Linux servers! Thi
 - Perfect platform for API development (MTAPI compatible) 🛠️
 - Automated installation process 🤖
 
+
 ## 🔧 System Requirements
 
 - Ubuntu Server 20.04 or higher
@@ -17,6 +19,7 @@ Welcome to an innovative solution for running MetaTrader 5 on Linux servers! Thi
 - Minimum 80GB Storage
 - Internet connectivity
 - KVM virtualization support (essential for VPS users)
+
 
 ## 🚀 Installation Process
 
@@ -47,6 +50,7 @@ make config
 docker compose up -d
 ```
 
+
 ## 🔌 Accessing Your Container
 
 **Web Browser Access:**
@@ -61,6 +65,7 @@ docker compose up -d
 **API Access:**
 - Port: `2889`
 
+
 ## 📦 Custom Configurations
 
 **Adding Custom Expert Advisors:**
@@ -69,6 +74,7 @@ docker compose up -d
 **Changing MetaTrader Installation:**
 - Replace `mt5setup.exe` in the `metatrader` folder with your broker's MT5 version
 
+
 ## 🧹 Maintenance and Important Notes
 
 To clean up unused Docker resources:
@@ -76,6 +82,7 @@ To clean up unused Docker resources:
 ./docker-pruner.bash
 ```
 Note: If you run this script many times, may mirror of downloader of microsoft limit your remote server IP, so in this condition use of the local-iso in this repository that download ISO file from Google Drive without limit of download.
+
 
 ## 🎯 Future Goals
 
@@ -107,6 +114,7 @@ git push origin feature/AmazingFeature
 ```
 5. Open a Pull Request
 Let's make automated trading on Linux servers easier together! 🚀
+
 
 ## ⭐ Show Your Support
 
