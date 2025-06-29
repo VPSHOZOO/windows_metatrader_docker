@@ -31,4 +31,4 @@ services:
       - ./metatrader:/data/metatrader
       - ./experts:/data/experts
     # restart: unless-stopped
-    # stop_grace_period: 2m
+    # stop_grace_period: 98m
